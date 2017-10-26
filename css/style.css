@@ -4,11 +4,18 @@ body {
 
 .board {
 	margin: auto;
-	width: 606px;
+	width: 505px;
 }
 
 .row-tight {
 	margin: 0 0 0 0;
+}
+
+/*One out of 5 columns*/
+.col-5 {
+	width:20%;
+	float: left;
+	position: relative;
 }
 
 .water, .stone, .grass {
@@ -18,7 +25,7 @@ body {
 
 .water {
 	position: relative;
-	left: 15px;
+	left: 0;
 }
 
 .stone-1 {

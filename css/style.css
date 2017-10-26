@@ -1,3 +1,47 @@
 body {
     text-align: center;
 }
+
+.board {
+	margin: auto;
+	width: 606px;
+}
+
+.row-tight {
+	margin: 0 0 0 0;
+}
+
+.water, .stone, .grass {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.water {
+	position: relative;
+	left: 15px;
+}
+
+.stone-1 {
+	position: relative;
+	top: -90px;
+}
+
+.stone-2 {
+	position: relative;
+	top: -180px;
+}
+
+.stone-3 {
+	position: relative;
+	top: -270px;
+}
+
+.grass-1 {
+	position: relative;
+	top: -360px;
+}
+
+.grass-2 {
+	position: relative;
+	top: -450px;
+}

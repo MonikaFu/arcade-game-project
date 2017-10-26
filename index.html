@@ -3,9 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<div class="container">
+		<header>
+			<h1>Frogger</h1>
+		</header>
+		<div class="board">
+			<div class="row-tight">
+				<div class="col-md-2 col-sm-2 col-xs-2 water">
+					<img src="images/water-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 water">
+					<img src="images/water-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 water">
+					<img src="images/water-block.png">					
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 water">
+					<img src="images/water-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 water">
+					<img src="images/water-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 water">
+					<img src="images/water-block.png">
+				</div>
+			</div>
+			<div class="row-tight">
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-1">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-1">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-1">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-1">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-1">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-1">
+					<img src="images/stone-block.png">
+				</div>
+			</div>
+			<div class="row-tight">
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-2">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-2">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-2">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-2">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-2">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-2">
+					<img src="images/stone-block.png">
+				</div>
+			</div>
+			<div class="row-tight">
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-3">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-3">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-3">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-3">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-3">
+					<img src="images/stone-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 stone-3">
+					<img src="images/stone-block.png">
+				</div>
+			</div>
+			<div class="row-tight">
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-1">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-1">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-1">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-1">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-1">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-1">
+					<img src="images/grass-block.png">
+				</div>
+			</div>
+			<div class="row-tight">
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-2">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-2">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-2">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-2">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-2">
+					<img src="images/grass-block.png">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 grass-2">
+					<img src="images/grass-block.png">
+				</div>
+			</div>
+		</div>
+	</div>
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>

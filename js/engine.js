@@ -79,7 +79,30 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
+        checkIfWon();
+    }
+
+    function checkCollisions() {
+        allEnemies.forEach(function(enemy) {
+            if (Math.abs(enemy.y-player.y)<40) {
+                if (Math.abs(enemy.x-player.x)<45) {
+                    reset()
+                }
+            }
+        })
+    }
+
+    function checkIfWon() {
+        if (player.y<-40) {
+            showWinnigMessage();
+            reset();
+        }
+    }
+
+    function showWinnigMessage() {
+        let modalWin = $('#winningModal');
+        modalWin.css('display','block');
     }
 
     /* This is called by the update function and loops through all of the
@@ -158,7 +181,9 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+        player.x = 202;
+        player.y = 380;
+        player.move = 'no move'
     }
 
     /* Go ahead and load all of the images we know we're going to need to

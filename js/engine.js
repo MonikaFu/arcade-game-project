@@ -82,7 +82,10 @@ var Engine = (function(global) {
         checkCollisions();
         checkIfWon();
     }
-
+    
+    /* This function checks if a collsion between a player and any of the enemies 
+    * occured and if that is the case then the game is reset. 
+    */
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
             if (Math.abs(enemy.y-player.y)<40) {
@@ -92,14 +95,19 @@ var Engine = (function(global) {
             }
         })
     }
-
+    
+    /* This function checks if the player won and if that is the case 
+    if shows the winning modal and resets the game.
+    */
     function checkIfWon() {
         if (player.y<-40) {
             showWinnigMessage();
             reset();
         }
     }
-
+    
+    /* This function makes the modal with a winning message.
+    */
     function showWinnigMessage() {
         let modalWin = $('#winningModal');
         modalWin.css('display','block');
@@ -176,9 +184,7 @@ var Engine = (function(global) {
         player.render();
     }
 
-    /* This function does nothing but it could have been a good place to
-     * handle game reset states - maybe a new game menu or a game over screen
-     * those sorts of things. It's only called once by the init() method.
+    /* This function resets the game meaning that the initial position of the player is restored.
      */
     function reset() {
         player.x = 202;

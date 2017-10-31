@@ -9,7 +9,7 @@
  * drawn but that is not the case. What's really happening is the entire "scene"
  * is being drawn over and over, presenting the illusion of animation.
  *
- * This engine makes the canvas' context (ctx) object globally available to make 
+ * This engine makes the canvas' context (ctx) object globally available to make
  * writing app.js a little simpler to work with.
  */
 
@@ -83,24 +83,24 @@ var Engine = (function(global) {
         checkIfWon();
     }
     
-    /* This function checks if a collsion between a player and any of the enemies 
-    * occured and if that is the case then the game is reset. 
+    /* This function checks if a collsion between a player and any of the enemies
+    * occured and if that is the case then the game is reset.
     */
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
-            if (Math.abs(enemy.y-player.y)<40) {
-                if (Math.abs(enemy.x-player.x)<45) {
-                    reset()
+            if (Math.abs(enemy.y - player.y) < 40) {
+                if (Math.abs(enemy.x - player.x) < 45) {
+                    reset();
                 }
             }
-        })
+        });
     }
     
-    /* This function checks if the player won and if that is the case 
+    /* This function checks if the player won and if that is the case
     if shows the winning modal and resets the game.
     */
     function checkIfWon() {
-        if (player.y<-40) {
+        if (player.y < -40) {
             showWinnigMessage();
             reset();
         }
@@ -110,7 +110,7 @@ var Engine = (function(global) {
     */
     function showWinnigMessage() {
         let modalWin = $('#winningModal');
-        modalWin.css('display','block');
+        modalWin.css('display', 'block');
     }
 
     /* This is called by the update function and loops through all of the
@@ -189,7 +189,7 @@ var Engine = (function(global) {
     function reset() {
         player.x = 202;
         player.y = 380;
-        player.move = 'no move'
+        player.move = 'no move';
     }
 
     /* Go ahead and load all of the images we know we're going to need to

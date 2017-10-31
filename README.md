@@ -1,6 +1,37 @@
-frontend-nanodegree-arcade-game
+Frogger arcade game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [How to run](#how-to-run)
+* [Rules of the game](#rules-of-the-game)
+* [Contributing](#contributing)
+* [Possible upcoming additions](#possible-upcoming-additions)
+* [License](#license)
+
+## How to run
+
+In order to run the game download the contents of the repository and open `index.html` in your internet browser. 
+
+## Rules of the game
+
+The aim of the game is to get to the water without colliding with the buggy enemies. In order to do that you need to move your player using keyboard arrows pointing `up`, `down`, `left` and `right`. If you collide with an enemy, the game is reset. If you reached the water, you've won the game and the winning message pops up. You can play again after closing the window.
+
+## Contributing
+
+This repository is my personal project, which is a part of Udacity Front End Web development nanodegree. In principal I would like to develop it on my own, but usefull tips and additions to the code are welcome.
+
+## Possible upcoming additions
+
+Possible interesting additions are:
+
+* possibility to chose how the player looks
+* a score counting the wins and collisions
+* collectible items
+* timer
+* different difficulty levels after a certain score
+
+## License
+
+The content of this repository is free and is licensed under a [MIT License](https://choosealicense.com/licenses/mit/)
+

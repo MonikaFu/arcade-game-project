@@ -1,13 +1,15 @@
 // Enemies our player must avoid
 var Enemy = function(y, speed) {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
+    // Variables applied to each of our instances go here
 
     // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
+    // a helper that is provided to easily load images
     this.sprite = 'images/enemy-bug.png';
-    this.x = -201;
-    switch(y) {
+    //initial horizontal position of the enemy
+    this.x = -201; 
+    //initial vertical position of the enemy specified at instantiation
+    // can be first, secnd or third row counting from the top
+    switch(y) { 
     	case 1:
     		this.y = 62;
     		break;
@@ -18,16 +20,17 @@ var Enemy = function(y, speed) {
     		this.y = 228;
     		break;
     };
-    this.speed = speed;
+    //speed of the enemy is specified at instantiation
+    this.speed = speed; 
 };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers. 
+    // update the position of the enemy, relative to the time that passed between the 
+    // canvas update and enemy's speed
     this.x+=this.speed*dt;
+    // make sure that the enemy's movement is looped 
     if (this.x>606) {
     	this.x=-101;
     }
@@ -38,16 +41,23 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+// Player class specification
 var Player = function() {
+	// Variables applied to each of our instances go here
+
+	// The image/sprite for our enemies, this uses
+    	// a helper that is provided to easily load images 
 	this.sprite = 'images/char-boy.png';
+	// initial horizontal position of the player
 	this.x = 202;
+	// initial vertical position of the player
 	this.y = 380;
+	// initial state of the player
 	this.move = 'no move'
 };
 
+// update method of the player checks if it's state changed and if it's position
+// should be changed as a result. Then the state is reset to 'no move'.
 Player.prototype.update = function() {
 	switch(this.move) {
 		case 'no move':
@@ -79,10 +89,13 @@ Player.prototype.update = function() {
 	};
 };
 
+// Draw the player on the screen, required method for game
 Player.prototype.render = function() {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// handleInput method for the player. Changes the state of the player depending on a 
+// key that was pressed by the user
 Player.prototype.handleInput = function(movement) {
 	if (typeof(movement)!='undefined') {
 		this.move=movement;
@@ -92,9 +105,9 @@ Player.prototype.handleInput = function(movement) {
 }; 
 
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+// Instantiation of the objects.
+// All enemy objects are placed in in an array called allEnemies
+// The player object is placed in a variable called player
 let Enemy1 = new Enemy(1,175);
 let Enemy2 = new Enemy(2,253);
 let Enemy3 = new Enemy(3,471);
@@ -104,7 +117,7 @@ let allEnemies = [Enemy1, Enemy2, Enemy3, Enemy4, Enemy5];
 let player = new Player();
 
 // This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// Player.handleInput() method. 
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -115,6 +128,8 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// Event listeners for the winning modal 
 
 // When the user clicks on <span> (x), close the modal
 $('.close').click(function() {
